@@ -42,7 +42,8 @@ if __name__ == "__main__":
     start = time.time()
     data_processor = LogsDataProcessor(name=args.dataset, 
         filepath=args.raw_log_file, 
-        columns = ["Case ID", "Activity", "Complete Timestamp"], #["case:concept:name", "concept:name", "time:timestamp"], 
+        #columns = ["Case ID", "Activity", "Complete Timestamp"],
+        columns = ["case:concept:name", "concept:name", "time:timestamp"], 
         dir_path=args.dir_path, pool = 1) #changed from 4 to 1
     data_processor.process_logs(task=args.task, sort_temporally= args.sort_temporally)
     end = time.time()
